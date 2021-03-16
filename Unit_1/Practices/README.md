@@ -1,10 +1,10 @@
-# Data Mining
+ Data Mining
 
 ### Practices
-> * [Practice Git Flow]()
+> * [Practice Git Flow](https://github.com/JuanCarlos-Negrete/Data-Mining/tree/Unit_1/Unit_1/Practices/Practice_GitFlow)
 > * [Practice #1](https://github.com/JuanCarlos-Negrete/Data-Mining/blob/Unit_1/Unit_1/Practices/Practice01/README.md)
-> * [Practice #2]()
-> * [Practice #3]()
+> * [Practice #2](https://github.com/JuanCarlos-Negrete/Data-Mining/tree/Unit_1/Unit_1/Practices/Practice02)
+> * [Practice #3](https://github.com/JuanCarlos-Negrete/Data-Mining/tree/Unit_1/Unit_1/Practices/Practice03)
 
 - Hernandez Negrete Juan Carlos 16212021
 - Sifuentes Martinez Manuel Javier 17212934
