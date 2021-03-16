@@ -36,15 +36,19 @@ for(i in rnorm(Numbers))
 
 ### 4. Check if the iterated variable falls
 ``` r
+  if(i >= -1 & i <= 1){
 
+  }
 ```
 
 ### 5. Increase counter if the condition is true
 ``` r
-
+    counter <- counter + 1
 ```
 
 ### 6. return a result <- counter / N
 ``` r
+result = counter/Numbers 
 
+print(result*100)
 ```
