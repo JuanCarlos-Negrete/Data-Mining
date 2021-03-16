@@ -16,19 +16,19 @@
 # 6. return a result <- counter / N
 
 # Exercise 1
-Numbers = 1:30
+Numbers = 10000000
 
 # Exercise 2
 counter = 1
 
-# Exercise 3
-for(i in rnorm(Numbers))
-  {
-  print(i)
+# Exercise 3,4,5
+for(i in rnorm(Numbers, 0, 1)) {
+  if(i >= -1 & i <= 1){
+    counter <- counter + 1
   }
+}
 
-# Exercise 4
-
-# Exercise 5
 
 # Exercise 6
+result = counter/Numbers 
+print(result*100)
