@@ -46,6 +46,7 @@ replace(
 ```
 
 ### 4. Function 4
+``` r
 b <- c(.55, 1.45)
 
 round(b, digits = 0)
