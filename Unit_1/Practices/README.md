@@ -6,5 +6,9 @@
 > * [Practice #2](https://github.com/JuanCarlos-Negrete/Data-Mining/tree/Unit_1/Unit_1/Practices/Practice02)
 > * [Practice #3](https://github.com/JuanCarlos-Negrete/Data-Mining/tree/Unit_1/Unit_1/Practices/Practice03)
 
+### Evaluation
+
+
+
 - Hernandez Negrete Juan Carlos 16212021
 - Sifuentes Martinez Manuel Javier 17212934
