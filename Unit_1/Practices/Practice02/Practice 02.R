@@ -21,7 +21,6 @@ length(which(mydata$clarity == 'SI2'))
 prop.table(table(mydata$clarity)) 
 
 #Function 2:
-
 m <- c(1,2,3)
 n <- c(4,5,6)
 r <- c(7,8,9)
@@ -33,7 +32,6 @@ cbind(m,n,r)
 rbind(m,n,r)
 
 #Function 3: 
-
 x <- 'MANUEL'
 z <- c(1,2,2,2,3)
 
@@ -54,7 +52,6 @@ round(b, digits = 1)
 
 
 #Function 5: 
-
 y <- matrix(sample(1:10, 10), 5,2)
 print(y)
 
@@ -65,7 +62,6 @@ sample(prueba)
 sample(prueba>8)
 
 #Function 6: 
-
 mat <- matrix(1:10,nrow =  5, ncol =  2)
 
 apply(mat,1,sum)
@@ -76,7 +72,6 @@ apply(mat,2,sort)
 
 
 #Function 7: 
-
 name = "MANUEL"
 
 tolower(name)
@@ -115,9 +110,7 @@ for(i in 1:10) {
 
 
 #Function 10:
-
 for(i in 1:10) {  
-  
   if(i == 5 | i == 10) {
     next
   }
@@ -125,7 +118,6 @@ for(i in 1:10) {
   if(i != 5) {
     print(paste("Finished loop iteration No.", i))
   }
-
 }
 
 
