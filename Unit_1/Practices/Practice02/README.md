@@ -135,30 +135,81 @@ for(i in 1:10) {
 }
 ```
 
-### 6. Function 11
+### 11. Function 11
+**nchar(x)**
+Takes a character vector as an argument and returns a vector whose elements contain the sizes of the corresponding elements of x. 
 ``` r
-
-```
-
-### 7. Function 
-``` r
-
+nchar("This is a Example")
 ```
 
 
-### 8. Function 
+### 12. Function 12
+**min(x)**
+Minimum of the elements of x
 ``` r
-
+x = c(2,100,3,15000,1,7,8)
+min(x) 
 ```
 
 
-### 9. Function 
+### 13. Function 13
+**sort(x)**
+Sort (or order) a vector or factor (partially) into ascending or descending order
 ``` r
-
+x = c(3,5,21,87,1,0,85,63,14,8,17,45,47,1002,375,841,254,98)
+sort(x)
 ```
 
 
-### 10. Function 
+### 14. Function 14
+**sd(x)**
+This function computes the standard deviation of the values in x
+``` r
+sd(10:4)
+```
+
+
+### 15. Function 15 
+**log(x)**
+Log returns the logarithm of the input x
+``` r
+log(2187)
+```
+
+### 16. Function 16
+**mean(a:b)**
+Generic function for the (trimmed) arithmetic mean.
+``` r
+mean(21:87)
+```
+
+### 17. Function 17 
+**length(x)** 
+Get or set the length of vectors (including lists) and factors, and of any other R object for which a method has been defined.
 ``` r
 
+x<-matrix(8:10,nrow=3,ncol=4)
+length(x)
+```
+
+### 18. Function 18
+**is.matrix(x)** 
+Tests if its argument is a (strict) matrix.
+``` r
+x<-matrix(3:3,nrow=4,ncol=2)
+is.matrix(x)
+```
+
+### 19. Function 19
+**range(x)**
+Returns the maximum and minimum
+``` r
+range(5 , 2 ,6 , 4 ,8 ,1 )
+```
+
+### 20. Function 20
+**exp(x)**
+Exponential of x
+``` r
+exp(2187)
 ```

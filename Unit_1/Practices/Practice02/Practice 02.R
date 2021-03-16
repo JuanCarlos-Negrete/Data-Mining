@@ -121,8 +121,59 @@ for(i in 1:10) {
 }
 
 
+#Function 11:
+# length(x) 
+# Get or set the length of vectors (including lists) and factors, and of any other R object for which a method has been defined.
+x<-matrix(8:10,nrow=3,ncol=4)
+length(x)
 
+#Function 12:
+# nchar(x) 
+# Takes a character vector as an argument and returns a vector whose elements contain the sizes of the corresponding elements of x. 
+nchar("This is a Example")
 
+#Function 13:
+# min(x) 
+# Minimum of the elements of x
+x = c(2,100,3,15000,1,7,8)
+min(x) 
+
+#Function 14:
+# sort(x)
+# Sort (or order) a vector or factor (partially) into ascending or descending order
+x = c(3,5,21,87,1,0,85,63,14,8,17,45,47,1002,375,841,254,98)
+sort(x)
+
+#Function 15:
+# sd(x) 
+# This function computes the standard deviation of the values in x
+sd(10:4)
+
+#Function 16:
+# log(x)
+# Log returns the logarithm of the input x
+log(2187)
+
+#Function 17:
+# mean(a:b) 
+# Generic function for the (trimmed) arithmetic mean.
+mean(21:87)
+
+#Function 18:
+# is.matrix(x) 
+# Tests if its argument is a (strict) matrix.
+x<-matrix(3:3,nrow=4,ncol=2)
+is.matrix(x)
+
+#Function 19:
+# range(x) 
+# Returns the maximum and minimum
+range(5 , 2 ,6 , 4 ,8 ,1 )
+
+#Function 20:
+# exp(x)
+# Exponential of x
+exp(2187)
 
 
 
