@@ -31,4 +31,5 @@ for(i in rnorm(Numbers, 0, 1)) {
 
 # Exercise 6
 result = counter/Numbers 
+
 print(result*100)
