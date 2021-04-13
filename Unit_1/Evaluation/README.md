@@ -78,3 +78,69 @@ filterYear2013 <- DataCountriescsv$Year %in% 2013
 filterYear2013
 DataCountriescsv[filterYear2013,]
 ```
+### Merge two data frames by common columns
+
+### 
+```r
+MCountriesData1960 <- merge(DfCoutriesData,DfLifeExpectancy1960, by.x = "Code", by.y = "Code")
+head(MCountriesData1960)
+```
+
+### dataframes to vectors 2013
+```r
+MCountriesData2013 <- merge(DfCoutriesData,DfLifeExpectancy2013, by.x = "Code", by.y = "Code")
+head(MCountriesData2013)
+```
+
+### Merge of cvs with dataframes per year 1960
+```r
+MergeContries1960F <- merge(DataCountriescsv[filterYear1960,],MCountriesData1960, by.x = "Country.Code", by.y = "Code" )
+head(MergeContries1960F)
+tail(MergeContries1960F)
+```
+
+### Merge of cvs with dataframes per year 1960
+```r
+MergeContries2013F <- merge(DataCountriescsv[filterYear2013,],MCountriesData2013, by.x = "Country.Code", by.y = "Code" )
+head(MergeContries2013F)
+tail(MergeContries2013F)
+```
+
+### instal library to be able to make complex graphics
+```r
+install.packages("ggplot2")
+library(ggplot2)
+```
+
+### We use the qplot function to create the scatter plots
+
+### creating the scatter plot for 1960
+```r
+qplot(data=MergeContries1960F,
+      x= Fertility.Rate, 
+      y=Life_Expectancy1960,
+      size= Region.x ,
+      color = Country.Name ,
+      main="Fertility rate vs Life expectancy at 1960",
+      xlab= "Fertility Rate",
+      ylab="Life expectancy",
+      
+)
+```
+
+### creating the scatter plot for 2013
+```r
+qplot(data=MergeContries2013F,
+      x= Fertility.Rate, 
+      y=Life_Expectancy2013,
+      size= Region.x ,
+      color = Country.Name ,
+      main="Fertility rate vs Life expectancy at 2013",
+      xlab= "Fertility Rate",
+      ylab="Life expectancy",
+)
+```
+
+
+
+
