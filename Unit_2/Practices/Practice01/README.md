@@ -21,6 +21,9 @@ v + geom_histogram(binwidth = 10, aes(fill=ï..genre),
                    color="Black") + facet_grid(ï..genre~., scales="free")
 ```
 
+### Facets Image
+![alt text](https://github.com/JuanCarlos-Negrete/Data-Mining/blob/Unit_2/Unit_2/Practices/Practice01/Facets.png)
+
 ### The third is a graph that should say something statistical such as the distribution of the data and that contains the theme layer.
 
 ### Histograms and density graphs
@@ -57,4 +60,9 @@ h +
         plot.title = element_text(color = "Black",
                                   size = 30,
                                   family = "Courier"))
-```
+
+### Density Chart Image
+![alt text](https://github.com/JuanCarlos-Negrete/Data-Mining/blob/Unit_2/Unit_2/Practices/Practice01/Density.png)
+
+### Histogram Image
+![alt text](https://github.com/JuanCarlos-Negrete/Data-Mining/blob/Unit_2/Unit_2/Practices/Practice01/Histogram.png)
