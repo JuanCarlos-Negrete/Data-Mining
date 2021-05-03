@@ -1,6 +1,6 @@
 
 
-
+library(ggplot2)
 
 
 #----- Graph in facets -----#
