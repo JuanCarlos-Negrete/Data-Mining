@@ -60,6 +60,7 @@ h +
         plot.title = element_text(color = "Black",
                                   size = 30,
                                   family = "Courier"))
+```
 
 ### Density Chart Image
 ![alt text](https://github.com/JuanCarlos-Negrete/Data-Mining/blob/Unit_2/Unit_2/Practices/Practice01/Density.png)
