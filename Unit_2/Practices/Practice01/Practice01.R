@@ -1,0 +1,42 @@
+
+
+
+
+
+#----- Graph in facets -----#
+
+#Load V-chart
+v <- ggplot(music, aes(x=popularity))
+
+#Facets
+v + geom_histogram(binwidth = 10, aes(fill=ï..genre),
+                   color="Black") + facet_grid(ï..genre~., scales="free")
+
+
+#-------------- Histograms and density graphs
+o <- ggplot(music, aes(x=popularity))
+
+
+# Density charts:
+h <- o + geom_density(aes(fill=ï..genre), position = "stack")
+
+#Histograms
+h <- o + geom_histogram(binwidth = 10, aes(fill=ï..genre), color="Black")
+
+
+# Theme #
+h +
+  xlab("Popularity") +
+  ylab("Number of Songs") +
+  ggtitle("Music Popularity Distribution") +
+  theme(axis.title.x = element_text(color = "DarkBlue", size=25),
+        axis.title.y = element_text(color = "DarkRed", size=25),
+        axis.text.x = element_text(size = 15),
+        axis.text.y = element_text(size = 15),
+        legend.title = element_text(size = 20),
+        legend.text = element_text(size = 15),
+        legend.position = c(1,1),
+        legend.justification = c(1,1),
+        plot.title = element_text(color = "Black",
+                                  size = 30,
+                                  family = "Courier"))
