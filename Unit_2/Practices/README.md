@@ -1,7 +1,7 @@
  Data Mining
 
 ### Practices
-> * [Practice01](https://github.com/JuanCarlos-Negrete/Data-Mining/tree/Unit_1/Unit_1/Practices/Practice_GitFlow)
+> * [Practice01](https://github.com/JuanCarlos-Negrete/Data-Mining/tree/Unit_2/Unit_2/Practices/Practice01)
 
 
 - Hernandez Negrete Juan Carlos 16212021
