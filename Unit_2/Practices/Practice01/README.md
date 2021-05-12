@@ -6,7 +6,41 @@
 
 ### The first one to be a scatter plot of points.
 
+### We add the library that we will work with
+library(ggplot2)
 
+### We access the path where the files are located
+``` r
+getwd()
+setwd("C:/Users/jc_rc/Data Mining Class/DataMining/AdvancedVisualization")
+getwd()
+``` 
+
+### We load our CSV with the variable "music"
+``` r
+music <- read.csv("SpotifyFeatures.csv")
+``` 
+
+### We apply the statistical functions to observe the data
+``` r
+head(music)
+tail(music)
+str(music)
+summary(music)
+``` 
+
+###Point scatter plot
+
+### We assign to the variable newgraph the columns "duration_ms" and "popularity" of the CSV for X and Y
+``` r
+newgraph <- ggplot(music, aes(x=duration_ms, y=popularity, 
+                       color=ï..genre)) 
+``` 
+
+### The point plot is created
+``` r
+newgraph + geom_point() + xlab("Duration (ms)") + ylab("Popularity")
+``` 
 
 ### The second is a facet chart
 
