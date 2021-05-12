@@ -7,7 +7,9 @@
 ### The first one to be a scatter plot of points.
 
 ### We add the library that we will work with
+``` r
 library(ggplot2)
+``` 
 
 ### We access the path where the files are located
 ``` r
@@ -29,7 +31,7 @@ str(music)
 summary(music)
 ``` 
 
-###Point scatter plot
+### Point scatter plot
 
 ### We assign to the variable newgraph the columns "duration_ms" and "popularity" of the CSV for X and Y
 ``` r
