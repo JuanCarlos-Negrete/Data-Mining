@@ -44,6 +44,9 @@ newgraph <- ggplot(music, aes(x=duration_ms, y=popularity,
 newgraph + geom_point() + xlab("Duration (ms)") + ylab("Popularity")
 ``` 
 
+### Scatter Plot Image
+![alt text](https://github.com/JuanCarlos-Negrete/Data-Mining/blob/Unit_2/Unit_2/Practices/Practice01/ScatterPlot.PNG)
+
 ### The second is a facet chart
 
 ### Load V-chart
