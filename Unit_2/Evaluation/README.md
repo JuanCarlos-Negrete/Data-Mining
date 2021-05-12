@@ -6,7 +6,7 @@ previous delivery and now they have a new requirement for you.
 The previous consultant had created a graph for them which is illustrated in the following
 picture.
 
-<img src="Unit_2/Evaluation/Example.PNG" alt="Example"/>
+![alt text](https://github.com/JuanCarlos-Negrete/Data-Mining/blob/Unit_2/Unit_2/Evaluation/Example.PNG)
 
 However, the R code used to create the graph has been lost and cannot
 be recovered.
