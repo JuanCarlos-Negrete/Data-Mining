@@ -98,5 +98,5 @@ t +
 
 
 ### Practice Image
-![alt text](https://github.com/JuanCarlos-Negrete/Data-Mining/blob/Unit_2/Unit_2/Evaluation/Practice_Image.PNG)
+![alt text](https://github.com/JuanCarlos-Negrete/Data-Mining/blob/Unit_2/Unit_2/Evaluation/Practice_Image.png)
 
