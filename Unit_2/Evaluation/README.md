@@ -1,12 +1,25 @@
 # Evaluation Unit #2
 
-TThe directors of the movie review website are very happy with their
+The directors of the movie review website are very happy with their
 previous delivery and now they have a new requirement for you.
 
 The previous consultant had created a graph for them which is illustrated in the following
 picture.
 
 <img src="Unit_2/Evaluation/Example.png" alt="Example"/>
+
+However, the R code used to create the graph has been lost and cannot
+be recovered.
+
+Your task is to create the code that will recreate the same table making it look like
+as close as possible to the original.
+You will be provided with a new data set which you can find in this
+link:
+> * [https://github.com/jcromerohdz/DataMining/blob/master/Datasets/Project-Data.csv](https://github.com/jcromerohdz/DataMining/blob/master/Datasets/Project-Data.csv)
+Or if they already have my repository cloned then it is in the folder: 
+DataMining/Datasets/Project-Data.csv
+
+## Code
 
 ### 1. We specify the path of the files to work
 ``` r
@@ -29,7 +42,7 @@ filtGenre <- movies$Genre %in% c("action","adventure","animation","comedy","dram
 
 ```
 
-### 4. Creating the dataframe with the filtered genres
+### 4. We create the dataframe with the filtered genres
 ``` r
 filtermovies <- movies[filtGenre,]
 ```
