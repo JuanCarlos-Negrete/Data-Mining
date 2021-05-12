@@ -1,7 +1,12 @@
-
-
+# We add the library that we will work with
 library(ggplot2)
 
+# We access the path where the files are located
+getwd()
+setwd("C:/Users/jc_rc/Data Mining Class/DataMining/AdvancedVisualization")
+
+#
+getwd()
 
 #----- Graph in facets -----#
 
@@ -9,8 +14,8 @@ library(ggplot2)
 v <- ggplot(music, aes(x=popularity))
 
 #Facets
-v + geom_histogram(binwidth = 10, aes(fill=ï..genre),
-                   color="Black") + facet_grid(ï..genre~., scales="free")
+v + geom_histogram(binwidth = 10, aes(fill=Ã¯..genre),
+                   color="Black") + facet_grid(Ã¯..genre~., scales="free")
 
 
 #-------------- Histograms and density graphs
@@ -18,10 +23,10 @@ o <- ggplot(music, aes(x=popularity))
 
 
 # Density charts:
-h <- o + geom_density(aes(fill=ï..genre), position = "stack")
+h <- o + geom_density(aes(fill=Ã¯..genre), position = "stack")
 
 #Histograms
-h <- o + geom_histogram(binwidth = 10, aes(fill=ï..genre), color="Black")
+h <- o + geom_histogram(binwidth = 10, aes(fill=Ã¯..genre), color="Black")
 
 
 # Theme #
