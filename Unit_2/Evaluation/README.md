@@ -1,54 +1,52 @@
-# Practice #01
+# Evaluation Unit #2
 
-Test the Law Of Large Numbers for N random normally distributed numbers with mean = 0, stdev=1:
+TThe directors of the movie review website are very happy with their
+previous delivery and now they have a new requirement for you.
 
-Create an R script that will count how many of these numbers fall between -1 and 1 and divide by the total quantity of N
-
-You know that E(X) = 68.2%
-Check that Mean(Xn)->E(X) as you rerun your script while increasing N
-
-Hint:
-1. Initialize sample size
-2. Initialize counter
-3. loop for(i in rnorm(size))
-4. Check if the iterated variable falls
-5. Increase counter if the condition is true
-6. return a result <- counter / N
+The previous consultant had created a graph for them which is illustrated in the following
+picture.
 
 
-### 1. Initialize sample size
+### 1. We specify the path of the files to work
 ``` r
-Numbers = 1:30
+getwd()
+setwd("C:/Users/jc_rc/DataMining/Data-Mining/Unit_2/Evaluation")
+getwd()
+
 ```
 
-### 2. Initialize counter
+### 2. We import our CSV file to work
 ``` r
-counter = 1
+movies <- read.csv("Project-Data.csv")
 ```
 
-### 3. loop for(i in rnorm(size))
+### 3. We filter the data because not all of it is used
+### We filter by gender
 ``` r
-for(i in rnorm(Numbers))
-  {
-  print(i)
-  }
+filtGenre <- movies$Genre %in% c("action","adventure","animation","comedy","drama")
+
+
 ```
 
-### 4. Check if the iterated variable falls
+### 4. Creating the dataframe with the filtered genres
 ``` r
-  if(i >= -1 & i <= 1){
-
-  }
+filtermovies <- movies[filtGenre,]
 ```
 
-### 5. Increase counter if the condition is true
+### 5. We filter the studies of our new data frame
 ``` r
-    counter <- counter + 1
+ filterStudio <- filtermovies$Studio %in% c("Buena Vista Studios","Fox","Paramount Pictures","Sony","Universal","WB")
+
 ```
 
-### 6. return a result <- counter / N
+### 6. We create the new data frame with all the data we need filtered
 ``` r
-result = counter/Numbers 
+Resultmovies <- filtermovies[filterStudio,]
+```
 
-print(result*100)
+### 7. We rename the columns
+ ``` r
+colnames(Resultmovies) <- c("Dayofweek", "Director", "Genre", "MovieTitle", "RealseDate", "Studio","AdjustedGroosMill","BudgetMill", "GrossMill","IMDbRating", "MovieLensRating", "OverseasMill",
+                            "Overseas", "ProfitMill", "Profit", "RuntimeMin", "UsMill", "GrossUS")
+
 ```
