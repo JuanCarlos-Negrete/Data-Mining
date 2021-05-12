@@ -24,7 +24,7 @@ DataMining/Datasets/Project-Data.csv
 ### 1. We specify the path of the files to work
 ``` r
 getwd()
-setwd("C:/Users/jc_rc/DataMining/Data-Mining/Unit_2/Evaluation")
+setwd("../Desktop/Materias 8vo/Mineria de datos/Practicas/U2/")
 getwd()
 
 ```
@@ -60,7 +60,43 @@ Resultmovies <- filtermovies[filterStudio,]
 
 ### 7. We rename the columns
  ``` r
-colnames(Resultmovies) <- c("Dayofweek", "Director", "Genre", "MovieTitle", "RealseDate", "Studio","AdjustedGroosMill","BudgetMill", "GrossMill","IMDbRating", "MovieLensRating", "OverseasMill",
+colnames(Resultmovies) <- c("Dayofweek", "Director", "Genre", "MovieTitle", "RealseDate", "Studio","AdjustedGroosMill","Budget", "GrossMill","IMDbRating", "MovieLensRating", "OverseasMill",
                             "Overseas", "ProfitMill", "Profit", "RuntimeMin", "UsMill", "GrossUS")
 
 ```
+
+### 8. Load libraries to use
+ ``` r
+library(extrafont)
+library(ggplot2)
+```
+
+### 9. Import downloaded fonts
+ ``` r
+font_import("fonts/", prompt = F)
+```
+
+### 10. We build the structure of the graph
+ ``` r
+t + 
+  xlab("Genre") +
+  ylab("Gross % US") +
+  ggtitle("Domestic Gross % by Genre") +
+  theme(axis.title.x = element_text(color = "Purple", size=30,  face = "bold"),
+        axis.title.y = element_text(color = "Purple", size=30,  face = "bold"),
+        axis.text.x = element_text(size = 20),
+        axis.text.y = element_text(size = 20),
+        legend.title = element_text(size = 25),
+        legend.text = element_text(size = 15),
+        legend.justification = c(1,.5),
+        text = element_text( family = "Comic Sans MS"),
+        plot.title = element_text(color = "Black",
+                                  size = 35,
+                                  hjust = 0.5,
+                                  face = "bold"))
+```
+
+
+### Practice Image
+![alt text](https://github.com/JuanCarlos-Negrete/Data-Mining/blob/Unit_2/Unit_2/Practices/Practice01/Density.png)
+
