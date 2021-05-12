@@ -98,5 +98,5 @@ t +
 
 
 ### Practice Image
-![alt text](https://github.com/JuanCarlos-Negrete/Data-Mining/blob/Unit_2/Unit_2/Practices/Practice01/Density.png)
+![alt text](https://github.com/JuanCarlos-Negrete/Data-Mining/blob/Unit_2/Unit_2/Evaluation/Practice_Image.PNG)
 
