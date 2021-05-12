@@ -6,7 +6,7 @@ previous delivery and now they have a new requirement for you.
 The previous consultant had created a graph for them which is illustrated in the following
 picture.
 
-<img src="C:/Users/jc_rc/DataMining/Data-Mining/Unit_2/Evaluation/Example.png" alt="Example"/>
+<img src="Unit_2/Evaluation/Example.png" alt="Example"/>
 
 ### 1. We specify the path of the files to work
 ``` r
