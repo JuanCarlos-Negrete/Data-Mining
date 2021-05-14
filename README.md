@@ -12,6 +12,7 @@
 > * [Statistical Distributions](https://github.com/JuanCarlos-Negrete/Data-Mining/tree/Unit_2/Unit_2/Researchs/Statistical%20Distributions)
 
 ### Evaluation
+> * [Evaluation](https://github.com/JuanCarlos-Negrete/Data-Mining/tree/Unit_2/Unit_2/Evaluation)
 
 - Hernandez Negrete Juan Carlos 16212021
 - Sifuentes Martinez Manuel Javier 17212934
