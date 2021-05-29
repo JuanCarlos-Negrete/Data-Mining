@@ -4,14 +4,14 @@
 
 ### Practices
 
-> * [Practice #1](https://github.com/JuanCarlos-Negrete/Data-Mining/blob/Unit_1/Unit_1/Practices/Practice01/README.md)
-> * [Practice #2](https://github.com/JuanCarlos-Negrete/Data-Mining/blob/Unit_1/Unit_1/Practices/Practice01/README.md)
+> * [Practice #1](https://github.com/JuanCarlos-Negrete/Data-Mining/tree/Unit_3/Unit_3/Practices/Practice01)
+> * [Practice #2](https://github.com/JuanCarlos-Negrete/Data-Mining/tree/Unit_3/Unit_3/Practices/Practice02)
 
 ### Researchs
-> * [Euclidean Distance](https://github.com/JuanCarlos-Negrete/Data-Mining/tree/Unit_2/Unit_2/Researchs/Origin%20and%20grammar%20of%20the%20graphs)
+> * [Euclidean Distance](https://github.com/JuanCarlos-Negrete/Data-Mining/tree/Unit_3/Unit_3/Researchs/Euclidean%20Distance)
 
 ### Evaluation
-> * [Evaluation](https://github.com/JuanCarlos-Negrete/Data-Mining/tree/Unit_2/Unit_2/Evaluation)
+> * [Evaluation](https://github.com/JuanCarlos-Negrete/Data-Mining/tree/Unit_3/Unit_3/Evaluation)
 
 - Hernandez Negrete Juan Carlos 16212021
 - Sifuentes Martinez Manuel Javier 17212934
