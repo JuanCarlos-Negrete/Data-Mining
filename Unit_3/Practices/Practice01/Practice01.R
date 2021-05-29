@@ -1,63 +1,51 @@
-# We add the library that we will work with
+getwd()
+setwd("../Desktop/DataMining/MachineLearning/LogisticRegression")
+getwd()
+
+dataset <- read.csv(file.choose())
+
+
+# Importing the dataset
+dataset <- read.csv('Social_Network_Ads.csv')
+dataset <- dataset[, 3:5]
+
+# Splitting the dataset into the Training set and Test set
+# Install.packages('caTools')
+library(caTools)
+set.seed(123)
+split <- sample.split(dataset$Purchased, SplitRatio = 0.75)
+training_set <- subset(dataset, split == TRUE)
+test_set <- subset(dataset, split == FALSE)
+
+# Feature scaling
+training_set[, 1:2] <- scale(training_set[, 1:2])
+test_set[, 1:2] <- scale(test_set[, 1:2])
+
+# Fitting Logistic Regression to Training set
+classifier = glm(formula = Purchased ~ .,
+                 family = binomial,
+                 data = training_set)
+
+# Predicting the Test set results
+prob_pred = predict(classifier, type = 'response', newdata = test_set[-3])
+prob_pred
+y_pred = ifelse(prob_pred > 0.5, 1, 0)
+y_pred
+
+# Making the Confusion Metrix
+cm = table(test_set[, 3], y_pred)
+cm
+
+# Graphic representation of results
 library(ggplot2)
+ggplot(training_set, aes(x=EstimatedSalary, y=Purchased)) + geom_point() + 
+  stat_smooth(method="glm", method.args=list(family="binomial"), se=FALSE)
 
-# We access the path where the files are located
-getwd()
-setwd("C:/Users/jc_rc/Data Mining Class/DataMining/AdvancedVisualization")
-getwd()
+ggplot(training_set, aes(x=Age, y=Purchased)) + geom_point() + 
+  stat_smooth(method="glm", method.args=list(family="binomial"), se=FALSE)
 
-# We load our CSV with the variable "music"
-music <- read.csv("SpotifyFeatures.csv")
+ggplot(test_set, aes(x=EstimatedSalary, y=Purchased)) + geom_point() + 
+  stat_smooth(method="glm", method.args=list(family="binomial"), se=FALSE)
 
-# We apply the statistical functions to observe the data
-head(music)
-tail(music)
-str(music)
-summary(music)
-
-#----- Point scatter plot -----#
-
-# We assign to the variable newgraph the columns "duration_ms" and "popularity" of the CSV for X and Y
-newgraph <- ggplot(music, aes(x=duration_ms, y=popularity, 
-                       color=ï..genre)) 
-
-# The point plot is created
-newgraph + geom_point() + xlab("Duration (ms)") + ylab("Popularity")
-
-#----- Graph in facets -----#
-
-#Load V-chart
-v <- ggplot(music, aes(x=popularity))
-
-#Facets
-v + geom_histogram(binwidth = 10, aes(fill=ï..genre),
-                   color="Black") + facet_grid(ï..genre~., scales="free")
-
-
-#-------------- Histograms and density graphs
-o <- ggplot(music, aes(x=popularity))
-
-
-# Density charts:
-h <- o + geom_density(aes(fill=ï..genre), position = "stack")
-
-#Histograms
-h <- o + geom_histogram(binwidth = 10, aes(fill=ï..genre), color="Black")
-
-
-# Theme #
-h +
-  xlab("Popularity") +
-  ylab("Number of Songs") +
-  ggtitle("Music Popularity Distribution") +
-  theme(axis.title.x = element_text(color = "DarkBlue", size=25),
-        axis.title.y = element_text(color = "DarkRed", size=25),
-        axis.text.x = element_text(size = 15),
-        axis.text.y = element_text(size = 15),
-        legend.title = element_text(size = 20),
-        legend.text = element_text(size = 15),
-        legend.position = c(1,1),
-        legend.justification = c(1,1),
-        plot.title = element_text(color = "Black",
-                                  size = 30,
-                                  family = "Courier"))
+ggplot(test_set, aes(x=Age, y=Purchased)) + geom_point() + 
+  stat_smooth(method="glm", method.args=list(family="binomial"), se=FALSE)
