@@ -4,7 +4,7 @@
 
 ### Practices
 
-> * [Practice #1](https://github.com/JuanCarlos-Negrete/Data-Mining/blob/Unit_1/Unit_1/Practices/Practice01/README.md)
+> * [Practice #1](https://github.com/JuanCarlos-Negrete/Data-Mining/tree/Unit_2/Unit_2/Practices/Practice01)
 
 
 ### Researchs
