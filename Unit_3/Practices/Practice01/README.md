@@ -1,86 +1,96 @@
 # Practice #01
 
-1. Search for a data source with csv format (Free theme)
-2. Read the csv and analyze the data with R
-3. Generate three graphs with R that tell the story of the data.
+Make the analysis corresponding to the logistic regression R script, which must be documented in your repository, putting in this your visual results and your detailed description of your observations as well as the source of code.
 
-### The first one to be a scatter plot of points.
-
-### We add the library that we will work with
-``` r
-library(ggplot2)
-``` 
-
-### We access the path where the files are located
+### Directory change
 ``` r
 getwd()
-setwd("C:/Users/jc_rc/Data Mining Class/DataMining/AdvancedVisualization")
+setwd("../Desktop/DataMining/MachineLearning/LogisticRegression")
 getwd()
 ``` 
 
-### We load our CSV with the variable "music"
+### Importing the dataset
 ``` r
-music <- read.csv("SpotifyFeatures.csv")
+dataset <- read.csv('Social_Network_Ads.csv')
+dataset <- dataset[, 3:5]
 ``` 
 
-### We apply the statistical functions to observe the data
+### Splitting the dataset into the Training set and Test set
 ``` r
-head(music)
-tail(music)
-str(music)
-summary(music)
+library(caTools)
+set.seed(123)
+split <- sample.split(dataset$Purchased, SplitRatio = 0.75)
+training_set <- subset(dataset, split == TRUE)
+test_set <- subset(dataset, split == FALSE)
 ``` 
 
-### Point scatter plot
-
-### We assign to the variable newgraph the columns "duration_ms" and "popularity" of the CSV for X and Y
+### Feature scaling
 ``` r
-newgraph <- ggplot(music, aes(x=duration_ms, y=popularity, 
-                       color=ï..genre)) 
+training_set[, 1:2] <- scale(training_set[, 1:2])
+test_set[, 1:2] <- scale(test_set[, 1:2])
 ``` 
 
-### The point plot is created
+### Fitting Logistic Regression to Training set
 ``` r
-newgraph + geom_point() + xlab("Duration (ms)") + ylab("Popularity")
+classifier = glm(formula = Purchased ~ .,
+                 family = binomial,
+                 data = training_set)
 ``` 
 
-### Scatter Plot Image
-![alt text](https://github.com/JuanCarlos-Negrete/Data-Mining/blob/Unit_2/Unit_2/Practices/Practice01/ScatterPlot.PNG)
-
-### The second is a facet chart
-
-### Load V-chart
+### Predicting the Test set results
 ``` r
-v <- ggplot(music, aes(x=popularity))
+prob_pred = predict(classifier, type = 'response', newdata = test_set[-3])
+prob_pred
+y_pred = ifelse(prob_pred > 0.5, 1, 0)
+y_pred
+``` 
+### Making the Confusion Metrix
+``` r
+cm = table(test_set[, 3], y_pred)
+cm
 ```
 
-### Facets
+### Graphic representation of results
+
 ``` r
-v + geom_histogram(binwidth = 10, aes(fill=ï..genre),
-                   color="Black") + facet_grid(ï..genre~., scales="free")
+ggplot(training_set, aes(x=EstimatedSalary, y=Purchased)) + geom_point() + 
+  stat_smooth(method="glm", method.args=list(family="binomial"), se=FALSE)
 ```
 
-### Facets Image
-![alt text](https://github.com/JuanCarlos-Negrete/Data-Mining/blob/Unit_2/Unit_2/Practices/Practice01/Facets.png)
+![alt text](https://github.com/JuanCarlos-Negrete/Data-Mining/blob/Unit_3/Unit_3/Practices/Practice01/Graphic1.png)
 
-### The third is a graph that should say something statistical such as the distribution of the data and that contains the theme layer.
 
-### Histograms and density graphs
+
 ``` r
-o <- ggplot(music, aes(x=popularity))
-```
-
-
-### Density chart
-``` r
-h <- o + geom_density(aes(fill=ï..genre), position = "stack")
+ggplot(training_set, aes(x=Age, y=Purchased)) + geom_point() + 
+  stat_smooth(method="glm", method.args=list(family="binomial"), se=FALSE)
 ```
 
 
-### Histogram
+![alt text](https://github.com/JuanCarlos-Negrete/Data-Mining/blob/Unit_3/Unit_3/Practices/Practice01/Graphic2.png)
+
+
+
 ``` r
-h <- o + geom_histogram(binwidth = 10, aes(fill=ï..genre), color="Black")
+ggplot(test_set, aes(x=EstimatedSalary, y=Purchased)) + geom_point() + 
+  stat_smooth(method="glm", method.args=list(family="binomial"), se=FALSE)
 ```
+
+![alt text](https://github.com/JuanCarlos-Negrete/Data-Mining/blob/Unit_3/Unit_3/Practices/Practice01/Graphic3.png)
+
+
+
+``` r
+ggplot(test_set, aes(x=Age, y=Purchased)) + geom_point() + 
+  stat_smooth(method="glm", method.args=list(family="binomial"), se=FALSE)
+```
+
+![alt text](https://github.com/JuanCarlos-Negrete/Data-Mining/blob/Unit_3/Unit_3/Practices/Practice01/Graphic4.png)
+
+
+
+
+
 
 ### Theme
 ``` r
@@ -103,6 +113,3 @@ h +
 
 ### Density Chart Image
 ![alt text](https://github.com/JuanCarlos-Negrete/Data-Mining/blob/Unit_2/Unit_2/Practices/Practice01/Density.png)
-
-### Histogram Image
-![alt text](https://github.com/JuanCarlos-Negrete/Data-Mining/blob/Unit_2/Unit_2/Practices/Practice01/Histogram.png)
