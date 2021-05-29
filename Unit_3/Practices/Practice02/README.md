@@ -1,86 +1,58 @@
-# Practice #01
+# Practice #02
 
-1. Search for a data source with csv format (Free theme)
-2. Read the csv and analyze the data with R
-3. Generate three graphs with R that tell the story of the data.
+Make the analysis corresponding to the R script of K-Nearest Neighbors (K-NN) which must be documented in its repository by putting in it its visual results and its detailed description of its observations as well as the source of the code.
 
-### The first one to be a scatter plot of points.
-
-### We add the library that we will work with
+### Importing the dataset
 ``` r
-library(ggplot2)
+dataset = read.csv('Social_Network_Ads.csv')
+dataset = dataset[3:5]
 ``` 
 
-### We access the path where the files are located
+### Encoding the target feature as factor
 ``` r
-getwd()
-setwd("C:/Users/jc_rc/Data Mining Class/DataMining/AdvancedVisualization")
-getwd()
+dataset$Purchased = factor(dataset$Purchased, levels = c(0, 1))
 ``` 
 
-### We load our CSV with the variable "music"
+### Splitting the dataset into the Training set and Test set
 ``` r
-music <- read.csv("SpotifyFeatures.csv")
+library(caTools)
+set.seed(123)
+split = sample.split(dataset$Purchased, SplitRatio = 0.75)
+training_set = subset(dataset, split == TRUE)
+test_set = subset(dataset, split == FALSE)
 ``` 
 
-### We apply the statistical functions to observe the data
+### Feature Scaling
 ``` r
-head(music)
-tail(music)
-str(music)
-summary(music)
+training_set[-3] = scale(training_set[-3])
+test_set[-3] = scale(test_set[-3])
 ``` 
 
-### Point scatter plot
 
-### We assign to the variable newgraph the columns "duration_ms" and "popularity" of the CSV for X and Y
+### Fitting K-NN to the Training set and Predicting the Test set results
 ``` r
-newgraph <- ggplot(music, aes(x=duration_ms, y=popularity, 
-                       color=ï..genre)) 
+library(class)
+y_pred = knn(train = training_set[, -3],
+             test = test_set[, -3],
+             cl = training_set[, 3],
+             k = 5,
+             prob = TRUE) 
 ``` 
 
-### The point plot is created
+### Making the Confusion Matrix
 ``` r
-newgraph + geom_point() + xlab("Duration (ms)") + ylab("Popularity")
+cm = table(test_set[, 3], y_pred)
 ``` 
 
-### Scatter Plot Image
-![alt text](https://github.com/JuanCarlos-Negrete/Data-Mining/blob/Unit_2/Unit_2/Practices/Practice01/ScatterPlot.PNG)
-
-### The second is a facet chart
-
-### Load V-chart
-``` r
-v <- ggplot(music, aes(x=popularity))
-```
-
-### Facets
-``` r
-v + geom_histogram(binwidth = 10, aes(fill=ï..genre),
-                   color="Black") + facet_grid(ï..genre~., scales="free")
-```
-
-### Facets Image
-![alt text](https://github.com/JuanCarlos-Negrete/Data-Mining/blob/Unit_2/Unit_2/Practices/Practice01/Facets.png)
-
-### The third is a graph that should say something statistical such as the distribution of the data and that contains the theme layer.
-
-### Histograms and density graphs
-``` r
-o <- ggplot(music, aes(x=popularity))
-```
 
 
-### Density chart
-``` r
-h <- o + geom_density(aes(fill=ï..genre), position = "stack")
-```
 
 
-### Histogram
-``` r
-h <- o + geom_histogram(binwidth = 10, aes(fill=ï..genre), color="Black")
-```
+
+
+
+
+
 
 ### Theme
 ``` r
@@ -103,6 +75,3 @@ h +
 
 ### Density Chart Image
 ![alt text](https://github.com/JuanCarlos-Negrete/Data-Mining/blob/Unit_2/Unit_2/Practices/Practice01/Density.png)
-
-### Histogram Image
-![alt text](https://github.com/JuanCarlos-Negrete/Data-Mining/blob/Unit_2/Unit_2/Practices/Practice01/Histogram.png)
