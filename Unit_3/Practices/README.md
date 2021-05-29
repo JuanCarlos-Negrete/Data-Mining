@@ -1,8 +1,8 @@
  Data Mining
 
 ### Practices
-> * [Practice01](https://github.com/JuanCarlos-Negrete/Data-Mining/tree/Unit_2/Unit_2/Practices/Practice01)
-> * [Practice02](https://github.com/JuanCarlos-Negrete/Data-Mining/tree/Unit_2/Unit_2/Practices/Practice01)
+> * [Practice01]https://github.com/JuanCarlos-Negrete/Data-Mining/tree/Unit_3/Unit_3/Practices/Practice01)
+> * [Practice02](https://github.com/JuanCarlos-Negrete/Data-Mining/tree/Unit_3/Unit_3/Practices/Practice02)
 
 
 
