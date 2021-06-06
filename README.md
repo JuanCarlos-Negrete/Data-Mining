@@ -6,6 +6,7 @@
 
 > * [Practice #1](https://github.com/JuanCarlos-Negrete/Data-Mining/tree/Unit_3/Unit_3/Practices/Practice01)
 > * [Practice #2](https://github.com/JuanCarlos-Negrete/Data-Mining/tree/Unit_3/Unit_3/Practices/Practice02)
+> * [Practice03](https://github.com/JuanCarlos-Negrete/Data-Mining/tree/Unit_3/Unit_3/Practices/Practice03)
 > * [Practice #4](https://github.com/JuanCarlos-Negrete/Data-Mining/tree/Unit_3/Unit_3/Practices/Practice04)
 > * [Practice #5](https://github.com/JuanCarlos-Negrete/Data-Mining/tree/Unit_3/Unit_3/Practices/Practice05)
 
