@@ -1,6 +1,6 @@
-# Practice #04
+# Practice #03
 
-Make the analysis corresponding to the R script of Random Forest which must be documented in its repository, putting in it its visual results and its detailed description of its observations as well as the source code.
+Make the analysis corresponding to the R script of the Desicion Tree, which must be documented in its repository, putting in it its visual results and its detailed description of its observations as well as the source code.
 
 ### Changing directory
 ``` r
@@ -36,18 +36,16 @@ training_set[-3] = scale(training_set[-3])
 test_set[-3] = scale(test_set[-3])
 ``` 
 
-### Fitting Random Forest Classification to the Training set
+### Fitting Decision Tree Classification to the Training set
 ``` r
-library(randomForest)
-set.seed(123)
-classifier = randomForest(x = training_set[-3],
-                          y = training_set$Purchased,
-                          ntree =10)
+library(rpart)
+classifier = rpart(formula = Purchased ~ .,
+                   data = training_set)
 ``` 
 
 ### Predicting the Test set results
 ``` r
-y_pred = predict(classifier, newdata = test_set[-3])
+y_pred = predict(classifier, newdata = test_set[-3], type = 'class')
 y_pred
 ``` 
 
