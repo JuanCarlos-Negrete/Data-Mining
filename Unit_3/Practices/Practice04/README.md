@@ -57,16 +57,63 @@ cm = table(test_set[, 3], y_pred)
 cm
 ``` 
 
-### Visualising the Test set results
-```r
 
+### We visualize the results of the training sessions, for this we use the elemenStatLearn library that helps us to color our graph
+```r
+library(ElemStatLearn)
+set = training_set
+X1 = seq(min(set[, 1]) - 1, max(set[, 1]) + 1, by = 0.01)
+X2 = seq(min(set[, 2]) - 1, max(set[, 2]) + 1, by = 0.01)
+grid_set = expand.grid(X1, X2)
+colnames(grid_set) = c('Age', 'EstimatedSalary')
+y_grid = predict(classifier, grid_set)
+plot(set[, -3],
+     main = 'Random Forest Classification (Training set)',
+     xlab = 'Age', ylab = 'Estimated Salary',
+     xlim = range(X1), ylim = range(X2))
+contour(X1, X2, matrix(as.numeric(y_grid), length(X1), length(X2)), add = TRUE)
+points(grid_set, pch = '.', col = ifelse(y_grid == 1, 'springgreen3', 'tomato'))
+points(set, pch = 21, bg = ifelse(set[, 3] == 1, 'green4', 'red3'))
 ```
 
-![alt text]()
+### In the graph we can see that there are points and the color red and green, on the y axis we have the estimate of wages and on the other we have the age for the data to be correct they must be in the area of ​​the same color, that is, the red ones with the reds and the greens with the greens otherwise they would be erroneous data, we can see that in general most of the data is in its corresponding area although we have a small margin of error
+
+![Alt text]()
 
 
-### Visualising the Test set results
+### We carry out the coding to make the diagram of the results of the test set
 ```r
-
+library(ElemStatLearn)
+set = test_set
+X1 = seq(min(set[, 1]) - 1, max(set[, 1]) + 1, by = 0.01)
+X2 = seq(min(set[, 2]) - 1, max(set[, 2]) + 1, by = 0.01)
+grid_set = expand.grid(X1, X2)
+colnames(grid_set) = c('Age', 'EstimatedSalary')
+y_grid = predict(classifier, grid_set)
+plot(set[, -3], main = 'Random Forest Classification (Test set)',
+     xlab = 'Age', ylab = 'Estimated Salary',
+     xlim = range(X1), ylim = range(X2))
+contour(X1, X2, matrix(as.numeric(y_grid), length(X1), length(X2)), add = TRUE)
+points(grid_set, pch = '.', col = ifelse(y_grid == 1, 'springgreen3', 'tomato'))
+points(set, pch = 21, bg = ifelse(set[, 3] == 1, 'green4', 'red3'))
 ```
-![alt text]()
+
+
+![Alt text]()
+
+### The values obtained from the randomForest function and stored in the classifier variable are graphed, and the error percentage can be observed.
+```r
+plot(classifier)
+```
+
+> RF Graph (Ten Trees)
+![Alt text]()
+
+> RF Graph (One Hundred Trees)
+![Alt text]()
+
+> RF Graph (Thousand Trees)
+![Alt text]()
+
+> RF Graph (Five Thousand Trees)
+![Alt text]()
