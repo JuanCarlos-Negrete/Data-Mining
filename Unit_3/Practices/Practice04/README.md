@@ -107,13 +107,13 @@ plot(classifier)
 ```
 
 > RF Graph (Ten Trees)
-![Alt text]()
+![Alt text](https://github.com/JuanCarlos-Negrete/Data-Mining/blob/Unit_3/Unit_3/Practices/Practice04/Graphic%203.png)
 
 > RF Graph (One Hundred Trees)
-![Alt text]()
+![Alt text](https://github.com/JuanCarlos-Negrete/Data-Mining/blob/Unit_3/Unit_3/Practices/Practice04/Graphic%204.png)
 
 > RF Graph (Thousand Trees)
-![Alt text]()
+![Alt text](https://github.com/JuanCarlos-Negrete/Data-Mining/blob/Unit_3/Unit_3/Practices/Practice04/Graphic%205.png)
 
 > RF Graph (Five Thousand Trees)
-![Alt text]()
+![Alt text](https://github.com/JuanCarlos-Negrete/Data-Mining/blob/Unit_3/Unit_3/Practices/Practice04/Graphic%206.png)
