@@ -2,11 +2,82 @@
 
 Make the analysis corresponding to the R script of Desicion Tree, which must be documented in its repository, putting in it its visual results and its detailed description of its observations as well as the source code.
 
-### 
-``` r
 
-``` 
+### In this practice we will explain some observations of the Support Vector Machine coding
 
+### First we must assign our workplace, with the function getwd () we will verify the position of our directory, With the function setwd ("") we assign our workplace
+```r 
+getwd()
+setwd("C:/Users/Rick/Documents/GitHub/DataMining/MachineLearning/KNN")
+getwd()
+```
+
+
+### Once our workplace is established, the next thing is to import the data, we are assigning the information from the csv file called social_Network_Ads.csv to the variable called dataset.
+```r
+dataset = read.csv('Social_Network_Ads.csv')
+```
+
+
+### In the next line of code we are declaring that we will only work with columns 3 to 5 present in the dataset.
+```r
+dataset = dataset[3:5]
+```
+
+###  We encode the destination function as a factor
+```r
+dataset$Purchased = factor(dataset$Purchased, levels = c(0, 1))
+```
+
+### We install and import the caTtools library
+```r
+install.packages('caTools')
+library(caTools)
+```
+### We set our seed of randomness
+
+```r
+set.seed(123)
+```
+
+### We set our training data and our test data separate our dataset)
+```r
+split = sample.split(dataset$Purchased, SplitRatio = 0.75)
+training_set = subset(dataset, split == TRUE)
+test_set = subset(dataset, split == FALSE)
+```
+
+### We normalize our data
+
+```r
+training_set[-3] = scale(training_set[-3])
+test_set[-3] = scale(test_set[-3])
+```
+
+### We install and import the e1071 library
+```r
+ 
+install.packages('e1071')
+library(e1071)
+```
+### Adaptation of svm to the training set and prediction of the test set results
+```r
+classifier = svm(formula = Purchased ~ .,
+                 data = training_set,
+                 type = 'C-classification',
+                 kernel = 'linear')
+```
+### We make the prediction of the test data set
+```r
+y_pred = predict(classifier, newdata = test_set[-3])
+y_pred
+```
+
+
+### We create the confusion matrix
+```r
+  cm = table(test_set[, 3], y_pred)
+```
 
 ### Visualising the Test set results
 ```r
