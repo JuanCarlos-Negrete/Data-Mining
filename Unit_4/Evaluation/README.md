@@ -35,14 +35,14 @@ TEM <- function(dataset){
 ```r
 TEM(dt)
 ```
-![alt text]()
+![alt text](https://github.com/JuanCarlos-Negrete/Data-Mining/blob/Unit_4/Unit_4/Evaluation/TEM1.png)
 
 ```r
 TEM(dt2)
 ```
-![alt text]()
+![alt text](https://github.com/JuanCarlos-Negrete/Data-Mining/blob/Unit_4/Unit_4/Evaluation/TEM2.png)
 
 ```r
 TEM(dt3)
 ```
-![alt text]()
+![alt text](https://github.com/JuanCarlos-Negrete/Data-Mining/blob/Unit_4/Unit_4/Evaluation/TEM3.png)
