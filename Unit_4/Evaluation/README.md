@@ -46,3 +46,64 @@ TEM(dt2)
 TEM(dt3)
 ```
 ![alt text](https://github.com/JuanCarlos-Negrete/Data-Mining/blob/Unit_4/Unit_4/Evaluation/TEM3.png)
+
+### Fitting K-Means to the dataset
+```r
+Clusters <- function(dataset, cnt){
+  set.seed(29)
+  kmeans = kmeans(x = dataset, centers = cnt)
+  y_kmeans = kmeans$cluster
+}
+
+ykmeans <- Clusters(dt, 5)
+ykmeans2 <- Clusters(dt2, 2)
+ykmeans3 <- Clusters(dt3, 5)
+```
+
+### Visualising the clusters
+```r
+library(cluster)
+clusplot(dt,
+         ykmeans,
+         lines = 0,
+         shade = TRUE,
+         color = TRUE,
+         labels = 2,
+         plotchar = FALSE,
+         span = TRUE,
+         main = paste('Clusters of Iris Plant'),
+         xlab = 'Sepal Lenght',
+         ylab = 'Sepal Widht')
+```
+![alt text](https://github.com/JuanCarlos-Negrete/Data-Mining/blob/Unit_4/Unit_4/Evaluation/Cluster1.png)
+
+```r
+clusplot(dt2,
+         ykmeans2,
+         lines = 0,
+         shade = TRUE,
+         color = TRUE,
+         labels = 2,
+         plotchar = FALSE,
+         span = TRUE,
+         main = paste('Clusters of Iris Plant'),
+         xlab = 'Petal Lenght',
+         ylab = 'Petal Widht')
+```
+
+![alt text](https://github.com/JuanCarlos-Negrete/Data-Mining/blob/Unit_4/Unit_4/Evaluation/Cluster2.png)
+
+```r
+clusplot(dt3,
+         ykmeans3,
+         lines = 0,
+         shade = TRUE,
+         color = TRUE,
+         labels = 2,
+         plotchar = FALSE,
+         span = TRUE,
+         main = paste('Clusters of Iris Plant'),
+         xlab = 'Sepal Lenght',
+         ylab = 'Petal Widht')
+```
+![alt text]https://github.com/JuanCarlos-Negrete/Data-Mining/blob/Unit_4/Unit_4/Evaluation/Cluster3.png)
