@@ -106,4 +106,4 @@ clusplot(dt3,
          xlab = 'Sepal Lenght',
          ylab = 'Petal Widht')
 ```
-![alt text]https://github.com/JuanCarlos-Negrete/Data-Mining/blob/Unit_4/Unit_4/Evaluation/Cluster3.png)
+![alt text](https://github.com/JuanCarlos-Negrete/Data-Mining/blob/Unit_4/Unit_4/Evaluation/Cluster3.png)
