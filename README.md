@@ -2,10 +2,6 @@
 
 ## Unit 4
 
-### Practices
-
-### Researchs
-
 ### Evaluation
 > * [Evaluation](https://github.com/JuanCarlos-Negrete/Data-Mining/tree/Unit_4/Unit_4/Evaluation)
 
