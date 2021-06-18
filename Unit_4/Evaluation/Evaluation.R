@@ -28,3 +28,55 @@ TEM <- function(dataset){
 TEM(dt)
 TEM(dt2)
 TEM(dt3)
+
+# Fitting K-Means to the dataset
+Clusters <- function(dataset, cnt){
+  set.seed(29)
+  kmeans = kmeans(x = dataset, centers = cnt)
+  y_kmeans = kmeans$cluster
+}
+
+ykmeans <- Clusters(dt, 5)
+ykmeans2 <- Clusters(dt2, 2)
+ykmeans3 <- Clusters(dt3, 5)
+
+# Visualising the clusters
+# install.packages('cluster')
+library(cluster)
+clusplot(dt,
+         ykmeans,
+         lines = 0,
+         shade = TRUE,
+         color = TRUE,
+         labels = 2,
+         plotchar = FALSE,
+         span = TRUE,
+         main = paste('Clusters of Iris Plant'),
+         xlab = 'Sepal Lenght',
+         ylab = 'Sepal Widht')
+
+clusplot(dt2,
+         ykmeans2,
+         lines = 0,
+         shade = TRUE,
+         color = TRUE,
+         labels = 2,
+         plotchar = FALSE,
+         span = TRUE,
+         main = paste('Clusters of Iris Plant'),
+         xlab = 'Petal Lenght',
+         ylab = 'Petal Widht')
+
+clusplot(dt3,
+         ykmeans3,
+         lines = 0,
+         shade = TRUE,
+         color = TRUE,
+         labels = 2,
+         plotchar = FALSE,
+         span = TRUE,
+         main = paste('Clusters of Iris Plant'),
+         xlab = 'Sepal Lenght',
+         ylab = 'Petal Widht')
+
+
